@@ -30,63 +30,50 @@ const Register = () => {
                 form={form}
             >
 
-                <div className="grid grid-cols-2 gap-x-5">
+                <div className="grid grid-cols-4 gap-x-5">
 
-                    <InputField name={"firstName"} label={"First Name"} />
-                    <InputField name={"lastName"} label={"Last Name"} />
-                    <InputField name={"location"} label={"Address"} />
+                    <InputField name="firstName" label="First Name" />
+                    <InputField name="lastName" label="Last Name" />
+                    <InputField name="email" label="E-mail" />
+                    {/* Phone Number */}
+                    <InputField name="phoneNumber" label="Phone Number" />
+                    {/* Address */}
+                    <div className="md:col-span-2 ">
+                        <InputField name="location" label="Address" />
+                    </div>
+                    {/* Student Contact */}
+                    <InputField name="studentContact" label="Student's Contact" />
+                    {/* Father's Name */}
+                    <InputField name="fatherName" label="Father’s Name" />
+                    {/* Father's Contact */}
+                    <InputField name="fatherContact" label="Father’s Contact" />
+                    {/* Mother's Name */}
+                    <InputField name="motherName" label="Mother’s Name" />
+                    {/* Mother's Contact */}
+                    <InputField name="motherContact" label="Mother’s Contact" />
+                    {/* Guardian Name */}
+                    <InputField name="guardianName" label="Guardian's Name" />
+                    {/* Guardian Contact */}
+                    <InputField name="guardianContact" label="Guardian's Contact" />
 
-                    <ConfigProvider
-                        theme={{
-                            components: {
-                                Select: {
-                                    activeBorderColor: "#BABABA",
-                                    hoverBorderColor: "#BABABA"
-                                },
-                            },
-                            token: {
-                                borderRadius: 0,
-                            },
+                    {/* Passport/Birth Certificate No */}
+                    <InputField
+                        name="passportOrBirthCertificate"
+                        label="Passport/Birth Certificate No."
+                    />
 
-                        }}
-                    >
-                        <Form.Item name="gender" label={<p className='text-[#4E4E4E] text-[16px]'>Gender</p>}>
-                            <Select
+                    {/* Date of Birth */}
+                    <InputField name="dateOfBirth" label="Date of Birth" />
 
-                                style={{ width: "100%", height: "48px" }}
-                                options={[
-                                    { value: 'MALE', label: 'Male' },
-                                    { value: 'FEMALE', label: 'Female' },
-
-                                ]}
-                            />
-                        </Form.Item>
-                    </ConfigProvider>
-
-                    <InputField name={"email"} label={"Email"} />
-                    <InputField name={"contact"} label={"Contact Number"} />
-
-                    <ConfigProvider
-                        theme={{
-                            token: {
-                                borderRadius: 0,
-                            },
-
-                        }}
-                    >
+                    {/* Password */}
+                    <div className=" col-span-2">
                         <Form.Item
                             name="password"
-                            label={<p className="block"> Password</p>}
+                            label={<p className="block text-[#f5f4f4]">Password</p>}
                             rules={[
-                                {
-                                    required: true,
-                                    message: "Please confirm your password!",
-                                },
-                                {
-                                    min: 8,
-                                    message: "Password must be at least 8 characters",
-                                },
 
+                                { required: true, message: "Please enter your password!" },
+                                { min: 8, message: "Password must be at least 8 characters" }
                             ]}
                             className="mb-5"
                         >
@@ -95,39 +82,23 @@ const Register = () => {
                                 className="border border-gray-300 h-[50px] bg-white rounded-lg"
                             />
                         </Form.Item>
-                    </ConfigProvider>
+                    </div>
 
-                    <ConfigProvider
-                        theme={{
-
-                            components: {
-                                Select: {
-                                    activeBorderColor: "#d9d9d9",
-                                    activeOutlineColor: "#d9d9d9",
-                                    hoverBorderColor: "#d9d9d9"
-                                },
-                            },
-                            token: {
-                                borderRadius: 0,
-                            },
-                        }}>
+                    <div className=" col-span-2">
                         <Form.Item
                             name="confirm_password"
-                            label={<p className="block">Confirm Password</p>}
+                            label={<p className="block text-[#f5f4f4]">Confirm Password</p>}
                             dependencies={["password"]}
                             hasFeedback
                             rules={[
-                                {
-                                    required: true,
-                                    message: "Please confirm your password!",
-                                },
+                                { required: true, message: "Please confirm your password!" },
                                 ({ getFieldValue }) => ({
                                     validator(_, value) {
                                         if (!value || getFieldValue("password") === value) {
                                             return Promise.resolve();
                                         }
                                         return Promise.reject(
-                                            new Error("The new password that you entered do not match!")
+                                            new Error("The passwords do not match!")
                                         );
                                     },
                                 }),
@@ -140,39 +111,7 @@ const Register = () => {
                                 className="border border-gray-300 h-[50px] bg-white rounded-lg"
                             />
                         </Form.Item>
-                    </ConfigProvider>
-
-                    <Form.Item
-                        name={"country"}
-
-                        label={<p className="text-[#4E4E4E] text-[16px]">Country</p>}
-                        rules={[
-                            {
-                                required: true,
-                                message: `Please enter your country`,
-                            },
-                        ]}
-                    >
-                        <Input
-                            placeholder={`Enter your country`}
-                            style={{
-                                height: 48,
-                                border: "1px solid #d9d9d9",
-                                outline: "none",
-                                boxShadow: "none",
-                                backgroundColor: "white",
-                            }}
-                            readOnly
-                        />
-                    </Form.Item>
-                    <InputField name='dateOfBirth' label='Date of Birth' />
-                </div>
-
-                <div className="flex items-center justify-between">
-                    <Form.Item style={{ marginBottom: 0 }} name="agree" valuePropName="checked" rules={[{ required: true }]}>
-                        <Checkbox>I agree with terms of service and privacy policy</Checkbox>
-                    </Form.Item>
-
+                    </div>
 
                 </div>
 
@@ -190,7 +129,7 @@ const Register = () => {
                         }}
                         className="flex items-center justify-center bg-primary rounded-lg"
                     >
-                       Sign up 
+                        Sign up
                     </button>
                 </Form.Item>
 
@@ -198,7 +137,7 @@ const Register = () => {
             </Form>
 
             <div className=" flex items-center justify-center gap-1 py-4">
-                <p className="text-[#636363]"> have any account?</p>
+                <p className="text-[#e0dddd]">  Already have an account?</p>
                 <Link href="/login" className="text-[#1854F9] font-semibold" > Log in </Link>
             </div>
         </div>
