@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+:root {
+  --primary: #1A5FA4;
+} 
+
+::-webkit-scrollbar {
+  display: none;
+} 
+
+@layer utilities {
+ .flex-center {
+  @apply flex items-center justify-center;
+ }
+}   
+
+.custom-black-modal .ant-modal-content {
+  background: #1c1c1e !important;
+  color: #ffffff !important;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25) !important;
+  border: 1px solid #3b3b3b !important;
+}  
+
+.ant-input-outlined {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: 1px solid #ffffff1a !important;
+/* height: 48px !important; */
+}  
+
+.ant-input::placeholder {
+  color: #6B7280 !important;
+}
+
+.ant-modal .ant-modal-close {
+  color: #ffffff !important;
+} 
+
+.jodit_theme_dark .jodit-wysiwyg {
+  background-color: #1c1c1e !important;
+  color: #ffffff !important;
+}
