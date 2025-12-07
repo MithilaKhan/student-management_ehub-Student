@@ -26,18 +26,19 @@ const StudentFilterForm = () => {
             year,
         });
 
-        router.push(`/report-card/filtered-student-list?${params.toString()}`);
+        // router.push(`/report-card/filtered-student-list?${params.toString()}`);
     }
     return (
-        <Form layout="vertical" className=' md:w-[50%] w-full' onFinish={onFinish}>
+        <Form layout="vertical" className=' md:w-[50%] w-full' onFinish={onFinish}> 
+         <p className=' text-[#1A5FA4] font-medium text-xl pb-4'>Enrol Student to Course</p>
             <Form.Item
-                label={<label className="block text-sm text-[#9CA3AF]">Grade</label>}
-                name="grade"
-                rules={[{ required: true, message: "Please select Grade" }]}
+                label={<label className="block text-sm text-[#9CA3AF]">Student Name</label>}
+                name="name"
+                rules={[{ required: true, message: "Please select student name" }]}
             >
                 <Select
                     options={studentOptions}
-                    placeholder="Select Grade"
+                    placeholder="Select Student Name"
                     showSearch
                     optionFilterProp="label"
                     style={{ width: '100%', height: 45 }}
@@ -46,7 +47,7 @@ const StudentFilterForm = () => {
             </Form.Item>
 
             <Form.Item
-                label={<label className="block text-sm text-[#9CA3AF]">Subject</label>}
+                label={<label className="block text-sm text-[#9CA3AF]">Subject Name</label>}
                 name="subject"
                 rules={[{ required: true, message: "Please select Subject" }]}
             >
@@ -90,37 +91,9 @@ const StudentFilterForm = () => {
                 />
             </Form.Item>
 
-            <div className="grid grid-cols-2 gap-4">
-                <Form.Item
-                    label={<label className="block text-sm text-[#9CA3AF]">Select Month</label>}
-                    name="month"
-                >
-                    <DatePicker
-                        picker="month"
-                        placeholder="Select Month"
-                        format="MMMM"
-                        style={{ width: '100%', height: 45 }}
-                        suffixIcon={<IoCalendarOutline className="text-gray-400" />}
-                    />
-                </Form.Item>
-
-                <Form.Item
-                    label={<label className="block text-sm text-[#9CA3AF]">Select Year</label>}
-                    name="year"
-                >
-                    <DatePicker
-                        picker="year"
-                        placeholder="Select Year"
-                        format="YYYY"
-                        style={{ width: '100%', height: 45 }}
-                        suffixIcon={<IoCalendarOutline className="text-gray-400" />}
-                    />
-                </Form.Item>
-            </div>
-
             <Form.Item className="mt-6 flex justify-end">
-                <button type="submit" className=" bg-[#1A5FA4] h-[45px]  px-8 rounded-md text-white">
-                    Get Filtered Student List
+                <button type="submit" className=" bg-[#198754] h-[45px]  px-8 rounded-md text-white">
+                   Class Routine
                 </button>
             </Form.Item>
         </Form>

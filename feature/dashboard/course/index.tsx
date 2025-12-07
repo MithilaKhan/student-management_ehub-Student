@@ -3,14 +3,15 @@ import HeaderTitle from '@/shared/HeaderTitle';
 import React from 'react';
 import StudentFilterForm from './StudentFilterForm';
 
-const ReportCard = () => {
+const Course = () => {
 
     return (
         <div className=' w-full h-full'>
-            <HeaderTitle title="Filter Student List" />
+            <HeaderTitle title="Assign Section and Course" />
 
-            <div className=" h-[78vh] ">
+            <div className=" h-[78vh] "> 
                 <div className='flex-center w-full h-full '>
+               
                     <StudentFilterForm />
                 </div>
             </div>
@@ -18,4 +19,4 @@ const ReportCard = () => {
     );
 };
 
-export default ReportCard;
+export default Course;
