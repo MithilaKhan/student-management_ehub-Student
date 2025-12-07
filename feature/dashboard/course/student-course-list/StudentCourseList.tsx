@@ -8,7 +8,7 @@ const StudentCourseList = () => {
         <div>
             <div className="">
                 {/* header */}
-                <div className="flex md:flex-row flex-col items-start justify-between md:space-y-0 space-y-4 pb-5 ">
+                <div className="flex md:flex-row flex-col items-start justify-between md:gap-y-0 gap-y-4 pb-5 ">
                     <div className="flex items-center gap-3">
                         <div className="p-2 rounded bg-[#1e293b]">
                             <FiEdit className="text-white" />

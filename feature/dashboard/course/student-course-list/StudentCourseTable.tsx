@@ -66,7 +66,7 @@ const StudentCourseTable = () => {
   ];
 
   return (
-    <div className="p-4">
+    <div className="pt-5">
       <TableMain
         columns={columns}
         dataSource={dataSource}
