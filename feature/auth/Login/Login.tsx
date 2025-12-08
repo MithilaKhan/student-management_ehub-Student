@@ -1,10 +1,11 @@
 "use client"
 import InputField from "@/shared/InputField";
 import { Checkbox, Form, Input } from "antd";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 const Login = () => {
-const router = useRouter();
+  const router = useRouter();
   return (
     <div
     >
@@ -64,7 +65,7 @@ const router = useRouter();
               fontSize: "18px",
 
               marginTop: 20
-            }} 
+            }}
             onClick={() => router.push("/")}
             className="flex items-center justify-center bg-[#1A5FA4] rounded-lg"
           >
@@ -72,6 +73,12 @@ const router = useRouter();
           </button>
         </Form.Item>
       </Form>
+      <div className="flex items-center justify-center gap-1 py-4">
+        <p className="text-[#636363]">Have no account?</p>
+        <Link href="/register" className="text-[#1854F9] font-semibold">
+          Register
+        </Link>
+      </div>
     </div>
   );
 };

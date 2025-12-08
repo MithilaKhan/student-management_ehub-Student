@@ -1,10 +1,12 @@
 "use client"
 import InputField from "@/shared/InputField";
-import { Checkbox, ConfigProvider, Form, Input, Select } from "antd";
+import { Form, Input} from "antd";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 const Register = () => {
-    const [form] = Form.useForm();
+    const [form] = Form.useForm(); 
+    const router = useRouter();
 
     const onFinish = async (values: any) => {
         const totalData = {
@@ -116,21 +118,22 @@ const Register = () => {
                 </div>
 
                 <Form.Item style={{ marginBottom: 0 }}>
-                    <button
-                        type="submit"
-                        style={{
-                            width: '100%',
-                            height: 45,
-                            color: "white",
-                            fontWeight: "400px",
-                            fontSize: "18px",
+                   <button
+            type="submit"
+            style={{
+              width: '100%',
+              height: 45,
+              color: "white",
+              fontWeight: "400px",
+              fontSize: "18px",
 
-                            marginTop: 20
-                        }}
-                        className="flex items-center justify-center bg-primary rounded-lg"
-                    >
-                        Sign up
-                    </button>
+              marginTop: 20
+            }}
+            onClick={() => router.push("/")}
+            className="flex items-center justify-center bg-[#1A5FA4] rounded-lg"
+          >
+            Sign Up
+          </button>
                 </Form.Item>
 
 
