@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "e.hub",
+  title: "e.hub student",
 };
 
 export default function RootLayout({
