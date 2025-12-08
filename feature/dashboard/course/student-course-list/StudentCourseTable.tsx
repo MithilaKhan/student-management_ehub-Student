@@ -58,7 +58,7 @@ const StudentCourseTable = () => {
           href="#"
           className="text-[#42A7C3] underline hover:text-[#68c4df]"
         >
-          Download Form 
+          Download Form
           {/* dsf */}
         </a>
       ),
@@ -71,7 +71,7 @@ const StudentCourseTable = () => {
         columns={columns}
         dataSource={dataSource}
         rowKey="key"
-        pagination={{ pageSize: 10 }}
+        pagination={{ pageSize: 8 }}
         className="w-full custom-table"
       />
     </div>
