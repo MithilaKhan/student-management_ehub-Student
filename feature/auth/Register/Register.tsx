@@ -32,7 +32,7 @@ const Register = () => {
                 form={form}
             >
 
-                <div className="grid grid-cols-4 gap-x-5">
+                <div className="grid md:grid-cols-4 grid-cols-2 gap-x-5">
 
                     <InputField name="firstName" label="First Name" />
                     <InputField name="lastName" label="Last Name" />
