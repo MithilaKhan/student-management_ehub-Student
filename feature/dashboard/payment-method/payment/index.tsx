@@ -7,7 +7,7 @@ const Payment = () => {
   return (
     <div>
       <div className="h-[calc(98vh-134px)]  flex items-center justify-center p-4">
-        <div className="w-full max-w-lg">
+        <div className="w-full md:max-w-lg">
           <div className="">
             {/* Recipient Field */}
             <div className="bg-[#0A0B0D] rounded-xl px-5 py-4 mb-5">

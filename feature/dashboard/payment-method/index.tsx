@@ -49,7 +49,7 @@ const PaymentMethod = () => {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-20">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 pt-20">
                     {paymentMethodsOptions.map((method) => (
                         <div
                             key={method.id}
@@ -67,15 +67,15 @@ const PaymentMethod = () => {
                             {/* <p className="text-gray-300 text-center mt-3 text-sm">{method.name}</p>  */}
                         </div>
                     ))}
-                </div> 
+                </div>
 
-                    {selectedImage && (
-                <div className="pt-10 flex justify-end">
+                {selectedImage && (
+                    <div className="pt-10 flex justify-end">
                         <Link href={"/payment-method/merchant-info"} className=" bg-[#198754] h-[45px]  px-8 py-2.5 rounded-md text-white">
                             Continue
                         </Link >
-                </div>
-                    )}
+                    </div>
+                )}
             </div>
         </div>
     );

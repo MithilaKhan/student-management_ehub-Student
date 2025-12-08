@@ -19,7 +19,7 @@ const MerchantInfo = () => {
     return (
         <div>
             <div className="">
-                <div className='max-w-1/2 pb-10'>
+                <div className='md:max-w-1/2 pb-10'>
                     <Input
                         placeholder="Search"
                         className=" w-full h-[50px]"
@@ -29,12 +29,12 @@ const MerchantInfo = () => {
                 </div>
 
                 <HeaderTitle title="Saved Payment" className='text-[#1A5FA4] pb-4' />
-                <div className="max-w-1/2 space-y-3">
+                <div className="md:max-w-1/2 space-y-3">
                     {
                         saveList.map((payment) => (
                             <Link href={"/payment-method/payment"}
                                 key={payment.id}
-                                className="flex items-center justify-between p-4  rounded-lg hover:bg-[#232325] transition-colors " 
+                                className="flex items-center justify-between p-4  rounded-lg hover:bg-[#232325] transition-colors "
 
                             >
                                 <div className="flex items-center gap-4">

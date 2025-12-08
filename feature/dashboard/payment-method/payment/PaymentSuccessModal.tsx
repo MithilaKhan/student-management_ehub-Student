@@ -23,7 +23,7 @@ const PaymentSuccessModal: React.FC<PaymentSuccessModalProps> = ({ open, setOpen
     }, [open]);
 
     return (
-        <Modal open={open} footer={null} onCancel={() => setOpen(false)}>
+        <Modal open={open} footer={null} onCancel={() => setOpen(false)} centered>
             <div className="flex items-center justify-center flex-col py-10">
                 <div className="w-20 h-20 bg-cyan-50 rounded-full flex items-center justify-center mb-6">
                     <div className="w-16 h-16 bg-[#00C2CB] rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
